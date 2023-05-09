@@ -30,13 +30,8 @@ error-chain = { version = "0.11", default-features = false }
 # fern 0.5.9 added chrono and we don't need it
 fern = { version = "=0.5.8", default-features = false }
 log = "0.4"
-svgdom = "0.10.5"
+svgdom = "0.18.0"
 
 [features]
 default = ["cli-parsing"]
 cli-parsing = ["clap"]
-
-# Makes it 5-10% faster, but very slow to compile.
-# Also makes an executable ~30% smaller.
-[profile.release]
-lto = true
