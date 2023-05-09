@@ -27,7 +27,6 @@ use svgdom::{
     self,
     Document,
     ElementId,
-    ParseOptions,
     WriteBuffer,
     WriteOptions,
 };
@@ -56,8 +55,8 @@ pub fn load_file(path: &str) -> Result<String, io::Error> {
     Ok(s)
 }
 
-pub fn parse_data(data: &str, opt: &ParseOptions) -> Result<Document, svgdom::Error> {
-    Document::from_str_with_opt(data, opt)
+pub fn parse_data(data: &str) -> Result<Document, svgdom::Error> {
+    Document::from_str(data)
 }
 
 pub fn clean_doc(
